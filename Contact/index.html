@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <script src="/Structural Elements/jquery-3.7.1.min.js"></script>
+    <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src="/Structural Elements/Loaded Content/Clock/script.js"></script>
+    <script defer src="/Contact/script.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+        integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/Structural Elements/Loaded Content/styles.css">
+    <link rel="stylesheet" href="/Structural Elements/Loaded Content/Footer/style.css">
+    <link rel="stylesheet" href="/Structural Elements/Loaded Content/Social Bar/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/Contact/style.css">
+    <link rel="stylesheet" href="/Structural Elements/Loaded Content/Clock/style.css" />
+
+
+    <!--Title and Favicon -->
+    <title>Alejandro Mendez | Software Developer</title>
+    <link rel="icon" type="image/x-icon" href="/Structural Elements/Logo and Favicon/alejandro-favicon-color.png">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div id="nav-placeholder"></div>
+    </header>
+    <div id="social-bar-placeholder"></div>
+    <div class="main-contact">
+        <h2 id="title-page">Contact</h2>
+        <hr id="highlighter">
+        <h3 id="description">Get in touch or shoot me an email directly on <a id="email">email.</a></h3>
+        <div class="contact-container">
+            <div class="contact-form">
+                <div class="form-container">
+                    <form method="POST" class="contact-form">
+                        <div class="form-group">
+                            <label for="name"></label>
+                            <input type="text" id="name" name="name" required placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email"></label>
+                            <input type="email" id="email" name="email" required placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message"></label>
+                            <textarea id="message" name="message" required placeholder="Message"></textarea>
+                        </div>
+                        <button type="submit" class="submit-button ripple">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="contact-timezone">
+                <div class="clock-container">
+                    <div class="clock">
+                        <div class="needle hour"></div>
+                        <div class="needle minute"></div>
+                        <div class="needle second"></div>
+                        <div class="center-point"></div>
+                    </div>
+                    <div class="time"></div>
+                    <div class="date"></div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-wrapper">
+                <div id="footer-placeholder"></div>
+            </div>
+        </footer>
+</body>
+
+</html>

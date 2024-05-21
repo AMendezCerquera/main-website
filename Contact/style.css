@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+
+.main-contact { 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+    padding-top: 50px;
+    background: url('/Structural Elements/Images/test2.svg');
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: row;
+    height: 48vh;
+    padding: 4vw 5vw;
+    justify-content: space-around;
+    margin-bottom: 8vh;
+    flex-wrap: wrap;
+}
+
+#title-page{
+    padding-top: 4.5vw;
+    font-family: 'Syne';
+    font-size: 4vw;
+    margin: 0 auto;
+    font-weight: 700;
+    color: #2D3142;
+}
+
+#highlighter{
+    border: 4px solid #E05215;
+    width: 25%;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+
+#description{
+    font-weight: 700;
+    margin: 0 auto;
+    margin-top: 2vw;
+    font-size: 2vw;
+    color: #2D3142;
+}
+
+#email{
+    color: #E05215;
+}
+
+.form-container {
+    background: #FAFAFA;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    box-shadow: 2px 0px 11px 5px #BFC0C0;
+}
+
+.contact-form {
+    display: grid;
+    grid-gap: 20px;
+    width: 35vw;
+}
+
+.contact-timezone{
+    padding-top: 3vw;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    font-size: 1.4vw;
+    font-family: 'Source Sans 3';
+    font-weight: 500;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none; /* Prevents resizing of the textarea */
+}
+
+textarea{
+    height: 13.5vh;
+}
+
+
+button.submit-button {
+    background-color: #E05215;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    font-size: 15px;
+    width: 25%;
+}
+
+button.submit-button:hover {
+   background-color: #2D3142; 
+}
+
+@media (max-width: 600px) {
+    .form-container {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .form-container {
+        width: 90%;
+    }
+}
+
+/*Button Ripple Effect*/
+button {
+    background-color: purple;
+    color: #fff;
+    border: 1px purple solid;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 20px 30px;
+    overflow: hidden;
+    margin: 10px 0;
+    position: relative;
+}
+
+button:focus {
+    outline: none;
+}
+
+button .circle {
+    position: absolute;
+    background-color: #fff;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: scale 0.5s ease-out;
+}
+
+@keyframes scale {
+    to {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 0;
+    }
+}

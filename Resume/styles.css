@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+
+html{
+    width: 100%;
+    background-color: #FFFFFF;
+}
+
+.resume-container{
+    font-family: 'Source Sans 3';
+    display: flex;
+    flex-direction: column;
+    margin: 5vw;
+    background-color: #FAFAFA;
+}
+
+.introduction, .experience{
+    padding: 5vw 5vw;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.experience{
+    padding-top: 0;
+}
+
+.introduction h1{
+    font-weight: 800;
+    font-size: 5.5vw;
+    line-height: 6vw;
+    margin-bottom: 0.5vh;
+    color: #E05215;
+}
+
+.experience h2{
+    color: #E05215;
+    font-weight: 700;
+    font-size: 3vw;
+    margin-top: 4vh;
+    margin-bottom: 0;
+}
+
+.skills h3{
+    padding-top: 3.5vh;
+}
+
+.background-container h3, .background-container h4{
+    margin: 0;
+    margin-top: 2vh;
+}
+
+.background-container p{
+    font-weight: 400;
+    margin-top: 0.5vh;
+}
+
+.background-container{
+    padding-right: 5vw;
+}
+
+.background-container h3{
+    color: #E05215;
+}
+
+.background-container h4:first-of-type{
+    margin-top: 0.8vw;
+}
+
+
+.background-container p{
+    font-size: 1.25vw;
+    color: #545A64;
+}
+
+.skills, .education, .interests{
+    margin-top: 2.5vh;
+    margin-bottom: 3vh;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    padding: 0;
+    width: 85%;
+    margin: 0 auto;
+}
+
+h1, h2, h3{
+    color: #2D3142;
+    margin-right: 15px;
+}
+
+span {
+    margin-left: 5px;
+}
+
+
+.introduction{
+    padding-bottom: 2.5vw;
+}
+
+.experience-container span{
+    color: #E05215;
+}
+
+.jobtitle-date{
+    display: flex;
+    flex-direction: row;
+}
+
+.jobtitle-date-multiple{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.jobtitle-date-multiple .positions h3
+{
+    margin-top: 0.5vh;
+    margin-bottom: 0.2vh;
+    margin-right: 15px;
+}
+
+.jobtitle-date-multiple .positions p{
+    margin: 0.5vh;
+    margin-left: 0;
+}
+
+.jobtitle-date-multiple, .jobtitle-date{
+    padding-top: 1.5vh;
+}
+
+.jobtitle-date h3, p{
+    margin-bottom: 0.5vh;
+}
+
+
+.positions{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.jobtitle-date p, .positions p{
+    font-weight: 500;
+    font-size: 1.3vw;
+    margin-top: 2vw;
+    color: #858C99;
+}
+
+.introduction #subtitle{
+    margin-top: 0;
+    margin-bottom: 1vh;
+    font-weight: 600;
+    font-size: 2.5vw;
+}
+
+.main-information, .main-background{
+    display: flex;
+    flex-direction: row;
+}
+
+.contact-information{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 5vw;
+    margin-right: 4vw;
+    margin-bottom: 12vh;
+}
+
+.contact-information a{
+    line-height: 2vh;
+    font-weight: 600;
+    font-size: 1.2vw;
+}

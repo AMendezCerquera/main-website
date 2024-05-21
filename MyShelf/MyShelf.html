@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <script src="/Structural Elements/jquery-3.7.1.min.js"></script>
+    <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+    <script src="/Structural Elements/script.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src="/MyShelf/script.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+        integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="/Structural Elements/Loaded Content/styles.css">
+    <link rel="stylesheet" href="/MyShelf/style.css">
+    <link rel="stylesheet" href="/Structural Elements/Loaded Content/Footer/style.css">
+    <link rel="stylesheet" href="/Structural Elements/Loaded Content/Social Bar/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+    <!--Title and Favicon -->
+    <title>Alejandro Mendez | Software Developer</title>
+    <link rel="icon" type="image/x-icon" href="/Structural Elements/Logo and Favicon/alejandro-favicon-color.png">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div id="nav-placeholder"></div>
+    </header>
+    <div id="social-bar-placeholder"></div>
+    <div class="blog-container">
+        <h2 id="title">My Shelf</h2>
+        <div class="blog-functionalities">
+            <button id="checkStatusButton">Check Status</button>
+            <button id="specialButton" style="display: none;">Add a Post</button>
+        </div>
+        <div id="articles-container">
+            <!-- Articles will be loaded here dynamically -->
+        </div>
+    </div>
+    <div id="chatbot-placeholder"></div>
+    <footer>
+        <div class="footer-wrapper">
+            <div id="footer-placeholder"></div>
+        </div>
+    </footer>
+</body>
+
+<template id="card-template">
+    <div class="card-container">
+        <article class="card">
+            <div class='content'>
+                <div class="card-header">
+                    <h2 id="card-title"></h2>
+                    <div class="card-type">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p id="card-description">
+                    </p>
+                </div>
+                <div class="blog-preview__bottom">
+                    <div class="blog-author">
+                        <img src="" alt="Avatar" id="author-avatar">
+                        <div class="blog-author-name">
+                            <div class="blog-author__name">
+                            </div>
+                            <a rel="author" href="" class="blog-author__alias">
+                                Contact
+                            </a>
+                        </div>
+                    </div>
+                    <button class="go-to-article-button" id="openModal" title="New Blog">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-right"
+                            width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M5 12l14 0" />
+                            <path d="M15 16l4 -4" />
+                            <path d="M15 8l4 4" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="articleModal" class="modal">
+                <div class="modal-content">
+                    <div class="header-modal">
+                        <span class="close-button">×</span>
+                        <h1 id="article-title"></h1>
+                    </div>
+                    <p id="article-content"></p>
+                </div>
+            </div>
+        </article>
+    </div>
+</template>
+
+</html>
