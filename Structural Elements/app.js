@@ -12,20 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 
 const cors = require('cors');
 
-// Dynamic CORS configuration to allow specific origins and support credentials
-app.use(cors({
-    origin: function (origin, callback) {
-        // List of domains you want to allow
-        const allowedOrigins = ['http://127.0.0.1:5500'];
-        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-            callback(null, true);  // Allow requests with no origin (like mobile apps or curl requests)
-        } else {
-            callback(new Error('CORS not allowed for this origin'));
-        }
-    },
-    credentials: true  // Reflect the origin in the CORS headers and allow credentials
-}));
-
+app.use(cors());
 
 // Create a connection pool
 const db = mysql.createPool({
@@ -36,109 +23,10 @@ const db = mysql.createPool({
 });
 
 // Express Session
-app.use(session({
-    secret: process.env.Secret_key,
-    resave: false,
-    saveUninitialized: false,
-    cookie: { secure: false, maxAge: 3600000 }
-}));
-
-// Passport init
-app.use(passport.initialize());
-app.use(passport.session());
-
-// Passport Local Strategy
-passport.use('local-strategy', new LocalStrategy({
-    usernameField: 'name',
-    passwordField: 'password'
-  },
-  function(name, password, done) {
-    db.promise().query('SELECT id, name, password FROM users WHERE name = ?', [name])
-        .then(([results, fields]) => {
-            if (results.length === 0) {
-                return done(null, false, { message: 'Incorrect username.' });
-            }
-            const user = results[0];
-            bcrypt.compare(password, user.password, (err, isMatch) => {
-                if (isMatch) {
-                    return done(null, user);
-                } else {
-                    return done(null, false, { message: 'Incorrect password.' });
-                }
-            });
-        })
-        .catch(err => done(err));
-}));
-
-// Serialize user into the sessions
-passport.serializeUser((user, done) => {
-    done(null, user.id);
-});
-
-// Deserialize user from the sessions
-passport.deserializeUser((id, done) => {
-    db.promise().query('SELECT id, name FROM users WHERE id = ?', [id])
-        .then(([results, fields]) => {
-            if (results.length === 0) {
-                return done(new Error('User not found'));
-            }
-            return done(null, results[0]);
-        })
-        .catch(err => done(err));
-});
+app.use(session());
 
   
-// Define routes
 // Routes
-
-app.post('/login',
-    passport.authenticate('local-strategy', {
-        successRedirect: 'http://127.0.0.1:5500/MyShelf/MyShelf.html',
-        failureRedirect: 'http://127.0.0.1:5500/index.html',
-        failureFlash: false
-    }) 
-);
-
-app.get('/logout', (req, res) => {
-    req.logout();
-    res.redirect('/login');
-});
-
-app.get('/', (req, res) => {
-    if (req.isAuthenticated()) {
-        res.send('Welcome to your blog! <a href="/logout">Logout</a>');
-    } else {
-        res.redirect('/login');
-    }
-});
-
-app.post('/register', (req, res) => {
-    const { name, password } = req.body;
-    if (!name || !password) {
-        return res.status(400).send('Username and password are required');
-    }
-
-    // Hash the password
-    bcrypt.hash(password, 10, (err, hashedPassword) => {
-        if (err) {
-            return res.status(500).send('Error hashing password');
-        }
-
-        // Store the new user in the database
-        db.query(
-            'INSERT INTO users (name, password) VALUES (?, ?)',
-            [name, hashedPassword],
-            (err, results) => {
-                if (err) {
-                    return res.status(500).send('Error registering the user');
-                }
-                res.redirect('http://127.0.0.1:5500/MyShelf/MyShelf.html'); // Redirect to login page or send success message
-            }
-        );
-    });
-});
-
-
 app.get('/articles', (req, res) => {
     let sql = 'SELECT articleId, articleName, articleDescription, articleData, authorName, authorEmail FROM articles';
     db.query(sql, (err, results) => {
@@ -169,15 +57,6 @@ app.post('/faq', (req, res) => {
     }
 
     res.json({ answer }); // Send the answer back to the client
-});
-
-
-app.get('/api/user/status', (req, res) => {
-    if (req.isAuthenticated()) {
-        res.json({ loggedIn: true });
-    } else {
-        res.json({ loggedIn: false });
-    }
 });
 
 // Start server

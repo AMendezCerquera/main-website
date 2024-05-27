@@ -177,3 +177,17 @@ footer {
         min-width: auto;
     }
 }
+
+@media screen and (min-width: 750px) {
+    .footer-wrapper{
+        max-width: 1400px;
+        padding: 20px 0;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    footer {
+        height: 400px;
+    }
+}

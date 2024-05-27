@@ -45,3 +45,10 @@ ul, li {
     color: black;
     outline: 1px solid transparent;
 }
+
+
+@media screen and (max-width: 400px) {
+    .social-sidebar{
+        display: none;
+    }
+}
