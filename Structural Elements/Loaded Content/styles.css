@@ -905,7 +905,7 @@ hr.rounded {
 
     .information {
         height: auto;
-        padding: 60px 0px 80px 30px;
+        padding: 60px 0 80px 0;
         justify-content: center; 
     }
 
@@ -913,22 +913,24 @@ hr.rounded {
         max-height: unset;
         height: auto;
         padding-bottom: 50px;
-        padding-left: 5rem;
-        padding-right: 2.5rem;
+        padding: 55px 4rem 20px 4rem;
     }
 
     .introduction-container {
-        height: inherit
+        height: inherit;
     }
 
     .image-container {
         padding-top: 0px;
-        height: 250px;
-        margin-left: 2.5rem;
-        margin-right: 2.5rem;
+        height: 200px;
+        margin: 0 auto;
     }
 
     .information {
+        width: auto;
+    }
+
+    .information p{
         width: auto;
     }
 

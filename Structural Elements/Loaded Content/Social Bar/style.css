@@ -52,3 +52,11 @@ ul, li {
         display: none;
     }
 }
+
+
+
+@media screen and (max-width: 577px) {
+    .social-sidebar{
+        padding: 0px 2px;
+    }
+}
