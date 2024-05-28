@@ -626,6 +626,7 @@ hr.rounded {
     .introduction-container {
         flex-direction: row;
     }
+
     .separator {
         display: none;
     }
@@ -902,14 +903,10 @@ hr.rounded {
         flex-wrap: wrap;
     }
 
-    .image-container {
-        padding-top: 62px;
-    }
-
     .information {
         height: auto;
-        padding: 60px 0px 80px 0px;
-        justify-content: center;
+        padding: 60px 0px 80px 30px;
+        justify-content: center; 
     }
 
     .container-background {
@@ -917,7 +914,7 @@ hr.rounded {
         height: auto;
         padding-bottom: 50px;
         padding-left: 5rem;
-        padding-right: 5rem;
+        padding-right: 2.5rem;
     }
 
     .introduction-container {
@@ -927,6 +924,8 @@ hr.rounded {
     .image-container {
         padding-top: 0px;
         height: 250px;
+        margin-left: 2.5rem;
+        margin-right: 2.5rem;
     }
 
     .information {
