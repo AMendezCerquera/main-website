@@ -2,14 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
 
-.main-contact { 
+.contact-information { 
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
-    margin-top: 50px;
     padding-top: 50px;
-    background: url('/Structural Elements/Images/test2.svg');
+    background-image: url("/Structural Elements/Images/test2.svg");
 }
 
 .contact-container {
