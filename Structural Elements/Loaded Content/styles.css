@@ -1260,6 +1260,10 @@ ul, li {
         max-height: 400px;
     }
 
+    .swiper-wraper {
+        max-height: 400px;
+    }
+
     .projects-list {
         grid-template-columns: 100%;
     }

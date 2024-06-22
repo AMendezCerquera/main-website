@@ -21,7 +21,6 @@ async function navigateLoad() {
       slidesPerView: 1,
       spaceBetween: 0,
       mousewheel: false,
-      autoHeight: true,
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -106,8 +105,8 @@ var resizeLeft = function resizeLeft() {
   var r = document.getElementById("right-col");
   var l = document.getElementById("left-col");
   var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+  console.log(width);
     if (width >= 500) {
-        console.log(width);
         l.style.height = r.offsetHeight + "px";
         console.log(r.offsetHeight);
     }
