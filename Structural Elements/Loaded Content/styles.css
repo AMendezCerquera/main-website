@@ -608,7 +608,7 @@ hr.rounded {
 .nav__list.expanded {
     padding: 50px 30px 60px 30px;
     height: 450px;
-    width: 300px;
+    width: 330px;
     z-index: 5;
     background-color: #2D3142;
 }

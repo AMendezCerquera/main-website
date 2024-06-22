@@ -54,6 +54,22 @@ function navigateFunctionalities() {
     navToggle.style.display = "flex";
   });
 
+  //Menu Functionalities
+  const nevButtons = document.querySelectorAll(".nav__link");
+  const contactMenu = document.getElementById("contact-button");
+
+  contactMenu.addEventListener("click", () => {
+    toggleChat();
+  });
+
+  nevButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      navList.classList.toggle("expanded");
+      navClose.style.display = "none";
+      navToggle.style.display = "flex";
+    });
+  });
+
   document.addEventListener("DOMContentLoaded", function () {
     const chatbot = document.getElementById("chatbot");
     chatbot.classList.add("hidden"); // Ensure chatbot is hidden on page load
@@ -104,12 +120,12 @@ function sendMessage() {
 var resizeLeft = function resizeLeft() {
   var r = document.getElementById("right-col");
   var l = document.getElementById("left-col");
-  var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+  var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
   console.log(width);
-    if (width >= 500) {
-        l.style.height = r.offsetHeight + "px";
-        console.log(r.offsetHeight);
-    }
+  if (width >= 500) {
+    l.style.height = r.offsetHeight + "px";
+    console.log(r.offsetHeight);
+  }
 };
 
 var addEvent = function (elem, type, eventHandle) {
