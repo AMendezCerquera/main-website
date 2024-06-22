@@ -9,8 +9,6 @@
   <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
   <script defer src="/Structural Elements/script.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script defer src="/Contact/script.js"></script>
-  <script defer src="/Structural Elements/Loaded Content/Clock/script.js"></script>
 
   <!-- Styles -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
@@ -18,7 +16,6 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="/Structural Elements/Loaded Content/styles.css" />
   <link rel="stylesheet" href="/Structural Elements/Loaded Content/Footer/style.css" />
-  <link rel="stylesheet" href="/Structural Elements/Loaded Content/Social Bar/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -26,7 +23,6 @@
   <link rel="preconnect" href="https://rsms.me/" />
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
   <link rel="stylesheet" href="/Contact/style.css" />
-  <link rel="stylesheet" href="/Structural Elements/Loaded Content/Clock/style.css" />
 
 
   <!--Title and Favicon -->
@@ -37,7 +33,52 @@
 <body>
   <!-- Header -->
   <header class="header" id="header">
-    <div id="nav-placeholder"></div>
+    <nav class="nav container">
+      <a href="#" class="nav__logo"><img class="logo"
+          src="/Structural Elements/Logo and Favicon/alejandro-favicon-color.png" alt="My Logo" /></a>
+
+      <div class="nav__menu" id="nav-menu">
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="ri-menu-line"></i>
+        </div>
+
+        <!-- Close Button-->
+        <div class="nav__close" id="nav-close">
+          <i class="ri-close-line"></i>
+        </div>
+
+        <ul class="nav__list" id="nav-list">
+          <!-- Home -->
+          <li class="nav__item">
+            <a href="#about-me" class="nav__link" id="">About Me</a>
+          </li>
+          <!-- Resume -->
+          <li class="nav__item">
+            <a href="/Resume/index.html" class="nav__link" id="">Resume</a>
+          </li>
+          <!-- Portfolio -->
+          <li class="nav__item">
+            <a href="#projects" class="nav__link" id="">Projects</a>
+          </li>
+          <!-- Contact -->
+          <li class="nav__item">
+            <a href="#" class="nav__link" onclick="toggleChat()">Contact</a>
+          </li>
+          <hr id="contact-nav">
+          <div class="contact-bar">
+            <p id="contact-separator">Stay in Touch</p>
+          </div>
+          <p id="contact-email">hello@alejandromendez.dev</p>
+          <div class="social-sidebar">
+            <!-- Social Media Links -->
+            <ul>
+              <li><a href="https://linkedin.com/in/yourusername" target="_blank"><i class="ri-github-line"></i></a></li>
+              <li><a href="https://twitter.com/yourusername" target="_blank"><i class="ri-linkedin-fill"></i></a></li>
+            </ul>
+          </div>
+        </ul>
+      </div>
+    </nav>
     <div class="main-container">
       <section class="container-background">
         <div class="introduction-container">
@@ -66,7 +107,7 @@
       </section>
     </div>
   </header>
-  <section class="aboutme-container">
+  <section class="aboutme-container" id="about-me">
     <div class="aboutme-information">
       <div class="aboutme-dataset">
         <div class="leftSide">
@@ -143,7 +184,7 @@
     </div>
     </div>
   </section>
-  <section class="projects">
+  <section class="projects" id="projects">
     <div class="title-container">
       <h3 id="title">My Projects:</h3>
       <p id="subtitle">More projects coming soon. </p>
@@ -199,7 +240,63 @@
   <div id="chatbot-placeholder"></div>
   <footer>
     <div class="footer-wrapper">
-      <div id="footer-placeholder"></div>
+      <div class="footer-columns">
+        <div class="footer-logo-column">
+          <div class="social-wrapper">
+            <div class='social-links'>
+              <ul>
+                <li>
+                  <a href="#" title="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24"
+                      height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path
+                        d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" title="Linkedin">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin"
+                      width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path
+                        d="M22 3.47059V20.5294C22 20.9194 21.845 21.2935 21.5692 21.5693C21.2935 21.8451 20.9194 22 20.5294 22H3.47056C3.08053 22 2.70648 21.8451 2.43069 21.5693C2.15491 21.2935 1.99997 20.9194 1.99997 20.5294V3.47059C1.99997 3.08056 2.15491 2.70651 2.43069 2.43073C2.70648 2.15494 3.08053 2 3.47056 2H20.5294C20.9194 2 21.2935 2.15494 21.5692 2.43073C21.845 2.70651 22 3.08056 22 3.47059V3.47059ZM7.88232 9.64706H4.94115V19.0588H7.88232V9.64706ZM8.14703 6.41176C8.14858 6.18929 8.10629 5.96869 8.02258 5.76255C7.93888 5.55642 7.81539 5.36879 7.65916 5.21039C7.50294 5.05198 7.31705 4.92589 7.1121 4.83933C6.90715 4.75277 6.68715 4.70742 6.46468 4.70588H6.41173C5.95931 4.70588 5.52541 4.88561 5.20549 5.20552C4.88558 5.52544 4.70585 5.95934 4.70585 6.41176C4.70585 6.86419 4.88558 7.29809 5.20549 7.61801C5.52541 7.93792 5.95931 8.11765 6.41173 8.11765V8.11765C6.63423 8.12312 6.85562 8.0847 7.06325 8.00458C7.27089 7.92447 7.46071 7.80422 7.62186 7.65072C7.78301 7.49722 7.91234 7.31346 8.00245 7.10996C8.09256 6.90646 8.14169 6.6872 8.14703 6.46471V6.41176ZM19.0588 13.3412C19.0588 10.5118 17.2588 9.41177 15.4706 9.41177C14.8851 9.38245 14.3021 9.50715 13.7798 9.77345C13.2576 10.0397 12.8142 10.4383 12.4941 10.9294H12.4117V9.64706H9.64703V19.0588H12.5882V14.0529C12.5457 13.5403 12.7072 13.0315 13.0376 12.6372C13.368 12.2429 13.8407 11.9949 14.3529 11.9471H14.4647C15.4 11.9471 16.0941 12.5353 16.0941 14.0176V19.0588H19.0353L19.0588 13.3412Z" />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="link-columns">
+          <div>
+            <section>
+              <h3>Resources</h3>
+              <ul>
+                <li>
+                  <a href="#" title="Support">Looking to learn how to code?</a>
+                </li>
+              </ul>
+            </section>
+            <section>
+              <h3>My Content</h3>
+              <ul>
+                <li>
+                  <a href="#" title="Support">Visit Colombia</a>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bottom-wrapper">
+          <small>© <span id="year"></span> "Made by Alejandro Mendez"</small>
+        </div>
+      </div>
     </div>
   </footer>
 </body>

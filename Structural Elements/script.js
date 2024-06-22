@@ -1,26 +1,16 @@
 async function navigateLoad() {
   try {
     // Await the fetch operation to complete and then convert response to text
-    const response = await fetch(
-      "/Structural Elements/Loaded Content/Navigation/nav.html"
-    );
-    const footerBar = await fetch(
-      "/Structural Elements/Loaded Content/Footer/footer.html"
-    );
     const chatBox = await fetch(
       "/Structural Elements/Loaded Content/Chatbox/index.html"
     );
 
-    if (!response.ok || !footerBar.ok || !chatBox.ok) {
+    if (!chatBox.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
-    const data = await response.text();
-    const footerData = await footerBar.text();
     const chatData = await chatBox.text();
 
     // Replace the placeholder with the fetched navigation content
-    document.getElementById("nav-placeholder").outerHTML = data;
-    document.getElementById("footer-placeholder").outerHTML = footerData;
     document.getElementById("chatbot-placeholder").outerHTML = chatData;
 
     // Access the elements after they have been added to the DOM
@@ -46,6 +36,7 @@ async function navigateLoad() {
 }
 
 function navigateFunctionalities() {
+  const chatbot = document.getElementById("chatbot");
   const navMenu = document.getElementById("nav-menu");
   const navList = document.getElementById("nav-list");
   const navToggle = document.getElementById("nav-toggle");
@@ -82,7 +73,6 @@ function navigateFunctionalities() {
 }
 
 function toggleChat() {
-  const chatbot = document.getElementById("chatbot");
   chatbot.classList.toggle("hidden");
 }
 

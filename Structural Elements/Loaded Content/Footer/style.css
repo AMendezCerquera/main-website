@@ -5,7 +5,7 @@
     --primary-dark: #37996B;
     --primary-darker: #317F5A;
     --headline-color: #E05215;
-    --text-color: #BFC0C0;
+    --text-color: #EAEBEB;
     --bg: #1C1C1C;
     --footer-bg: #212431;
     --secondary: #2E2E2E;
@@ -27,7 +27,7 @@ footer {
     display: flex;
     flex-direction: column;
     margin-top: auto;
-    height: 250px;
+    height: auto;
     bottom: 0;
 }
 
@@ -186,7 +186,7 @@ footer {
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 653px) {
     footer {
         height: 400px;
     }
