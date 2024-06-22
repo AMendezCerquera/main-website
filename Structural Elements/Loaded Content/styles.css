@@ -1159,14 +1159,6 @@ ul, li {
 }
 
 
-
-@media screen and (max-width: 500px) {
-    .information p {
-        font-size: 18px;
-    }
-}
-
-
 @media screen and (max-width: 576px) {
     .introduction-container {
         flex-wrap: wrap;
@@ -1227,6 +1219,51 @@ ul, li {
     #name{
         width: 100%;
     }
+}
+
+@media screen and (max-width: 500px) {
+
+    .img-home {
+        width: 300px;
+        height: 300px;
+    }
+
+    .information p {
+        font-size: 18px;
+    }
+
+    .information {
+        padding-top: 20px;
+    }
+
+    .container-background {
+        padding-left: 3.5em;
+        padding-right: 3.5em;
+    }
+
+    .aboutme-container {
+        margin-left: 3.5em;
+        margin-right: 3.5em;
+    }
+
+    .aboutme-country {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .projects {
+        padding-left: 3.5em;
+        padding-right: 3.5em;
+    }
+
+    .img {
+        max-height: 400px;
+    }
+
+    .projects-list {
+        grid-template-columns: 100%;
+    }
+
 }
 
 @media screen and (max-width: 400px) {

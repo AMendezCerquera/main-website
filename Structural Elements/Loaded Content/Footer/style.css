@@ -191,3 +191,9 @@ footer {
         height: 400px;
     }
 }
+
+@media screen and (max-width: 500px) {
+    footer {
+        height: 400px;
+    }
+}

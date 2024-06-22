@@ -105,9 +105,12 @@ function sendMessage() {
 var resizeLeft = function resizeLeft() {
   var r = document.getElementById("right-col");
   var l = document.getElementById("left-col");
-
-  l.style.height = r.offsetHeight + "px";
-  console.log(r.offsetHeight);
+  var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+    if (width >= 500) {
+        console.log(width);
+        l.style.height = r.offsetHeight + "px";
+        console.log(r.offsetHeight);
+    }
 };
 
 var addEvent = function (elem, type, eventHandle) {
