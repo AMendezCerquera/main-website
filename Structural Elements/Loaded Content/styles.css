@@ -314,7 +314,7 @@ a {
 
 hr.rounded {
     border: none;
-    width: 95%;
+    width: 100%;
     border-top: 1.4px solid #4F5D75;
 }
 
@@ -1236,6 +1236,11 @@ ul, li {
     #name{
         width: 100%;
     }
+
+    #aboutme-separator {
+        grid-template-columns: 42% 16% 42%;
+        align-items: center;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -1285,12 +1290,15 @@ ul, li {
         grid-template-columns: 100%;
     }
 
+}
+
+@media screen and (max-width: 525px) {
     .skills{
         grid-template-columns: 33% 33% 33%;
     }
-
-
 }
+
+
 
 @media screen and (max-width: 400px) {
     .aboutme-container{
