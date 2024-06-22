@@ -85,7 +85,6 @@ a {
     justify-content: center;
     flex-direction: column;
     justify-content: right;
-    padding-bottom: 5vh;
 }
 
 .container-background {
@@ -94,6 +93,7 @@ a {
     max-height: 600px;
     width: auto;
     padding: 20px 8rem 2rem 8.5rem;
+    margin-bottom: 20px;
     vertical-align: center;
     display: flex;
 }
@@ -181,6 +181,10 @@ a {
     position: relative;
 }
 
+.aboutme-container p{
+    font-weight: 500;
+}
+
 .aboutme-information {
     display: flex;
     flex-direction: column;
@@ -265,9 +269,8 @@ a {
 }
 
 .skills {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
 }
 
 .skill {
@@ -292,6 +295,27 @@ a {
     color: #2D3142;
     text-shadow: #BFC0C0 1.5px 1px 2px;
     font-weight: 700;
+}
+
+#aboutme-separator {
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 45% 10% 45%;
+    align-items: center;
+}
+
+#aboutme-separator i{
+    margin: auto;
+    height: 20px;
+    color: #E05215;
+    font-size: 22px;
+    padding: 0 10px;
+}
+
+hr.rounded {
+    border: none;
+    width: 95%;
+    border-top: 1.4px solid #4F5D75;
 }
 
 #About-me,
@@ -339,12 +363,6 @@ a {
 .button-projects:hover {
     background-color: transparent;
     color: #E05215;
-}
-
-hr.rounded {
-    width: 90%;
-    margin: 2.5vh auto;
-    border-top: 2px solid #2D3142;
 }
 
 .button-projects svg {
@@ -990,16 +1008,38 @@ ul, li {
     }
 }
 
+@media screen and (max-width: 1150px) {
+
+    .skill {
+        font-size: 55px;
+    }
+
+    .c-code{
+        width: 55px;
+        height: 55px;
+    }
+
+    .skills{
+        grid-template-columns: 33% 33% 33%;
+    }
+}
+
+
+/* Navigation for mobile devices */
+@media screen and (max-width: 1023px) {
+    :root {
+        --h2-font-size: 1.5rem;
+        --normal-font-size: 1rem;
+    }
+
+    .nav__toggle, .nav__close {
+        font-size: 25px;
+    }
+}
 
 @media screen and (max-width: 754px) {
     .aboutme-dataset, .aboutme-country {
         flex-direction: column;
-    }
-
-    .aboutme-country{
-        height: auto;
-        padding-left: 5.5vw;
-        padding-right: 5.5vw;
     }
 
     .aboutme-country .leftSide, .aboutme-country .rightSide {
@@ -1037,40 +1077,17 @@ ul, li {
         padding-left: 5.5rem;
         padding-right: 4rem;
     }
+
+    .skills{
+        grid-template-columns: 25% 25% 25% 25%;
+    }
+
 }
 
-
-/* Navigation for mobile devices */
-@media screen and (max-width: 1023px) {
-    :root {
-        --h2-font-size: 1.5rem;
-        --normal-font-size: 1rem;
-    }
-
-    .nav__toggle, .nav__close {
-        font-size: 25px;
-    }
-}
-
-
-/*
-@media screen and (max-width: 1150px) {
-    #Main-title {
-        line-height: 60px;
-        font-size: 50px;
-    }
-
-    .introduction-container {
-        padding-left: 22px;
-        padding-right: 22px;
-    }
-}
-*/
 
 @media screen and (min-width: 1050px) {
     .aboutme-container p{
         font-size: 17px;
-        font-weight: 500;
         line-height: 28px;
     }
 }
@@ -1089,12 +1106,12 @@ ul, li {
     }
     
     .skill{
-        font-size: 45px;
+        font-size: 60px;
     }
 
     .c-code{
-        max-width: 65px;
-        max-width: 65px;
+        width: 60px;
+        height: 60px;
     }
     
     .aboutme-dataset{
