@@ -1285,6 +1285,11 @@ ul, li {
         grid-template-columns: 100%;
     }
 
+    .skills{
+        grid-template-columns: 33% 33% 33%;
+    }
+
+
 }
 
 @media screen and (max-width: 400px) {
