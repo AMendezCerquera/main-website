@@ -7,8 +7,8 @@
 
   <script src="/Structural Elements/jquery-3.7.1.min.js"></script>
   <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script defer src="/Structural Elements/script.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <!-- Styles -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
@@ -23,6 +23,7 @@
   <link rel="preconnect" href="https://rsms.me/" />
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
   <link rel="stylesheet" href="/Contact/style.css" />
+  <link rel="stylesheet" href="/Structural Elements/Loaded Content/Chatbox/styles.css" />
 
 
   <!--Title and Favicon -->
@@ -54,11 +55,11 @@
           </li>
           <!-- Resume -->
           <li class="nav__item">
-            <a href="/Resume/index.html" class="nav__link" >Resume</a>
+            <a href="/Resume/index.html" class="nav__link">Resume</a>
           </li>
           <!-- Portfolio -->
           <li class="nav__item">
-            <a href="#projects" class="nav__link" >Projects</a>
+            <a href="#projects" class="nav__link">Projects</a>
           </li>
           <!-- Contact -->
           <li class="nav__item">
@@ -143,7 +144,8 @@
         </div>
       </div>
       <div id="aboutme-separator">
-        <hr class="rounded" /><i class="fa-solid fa-seedling"></i><hr class="rounded" />
+        <hr class="rounded" /><i class="fa-solid fa-seedling"></i>
+        <hr class="rounded" />
       </div>
       <div class="aboutme-country">
         <div class="leftSide">
@@ -239,7 +241,29 @@
     </ul>
   </section>
   </div>
-  <div id="chatbot-placeholder"></div>
+  <div class="chatbot-container">
+    <div id="chatbot" class="chatbot hidden">
+      <div class="chat-header">
+        <div class="bot-description">
+          <img id="bot-image" src="/Structural Elements/Images/IMG_2295.jpg">
+          <button id="online"></button>
+          <p class="chat-subtitle">Alejandro Bot <br> I'm here to help!</p>
+        </div>
+        <i class="fa-solid fa-xmark" onclick="toggleChat()" class="close-chat"></i>
+      </div>
+      <div class="chat-messages">
+        <div class="messages-space" id="chat-output" ></div>
+        <div class="prompt-space show"  id="prompt-container"></div>
+      </div>
+    </div>
+    <div class="toggle-container">
+      <div class="chat-invitation show" onclick="toggleChat()" id="chat-invitation">
+        <p>Questions?</p>
+      </div>
+      <button onclick="toggleChat()" class="chatbot-toggle"><i class="fa-solid fa-comment" id="icon1"></i>
+        <i class="fa-solid fa-pen-to-square hidden" id="icon2"></i></button>
+    </div>
+  </div>
   <footer>
     <div class="footer-wrapper">
       <div class="footer-columns">
