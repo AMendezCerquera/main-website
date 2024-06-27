@@ -601,7 +601,7 @@ hr.rounded {
     user-select: none;
     overflow: hidden;
     transform-origin: top right;
-    transition: width 0.5s, height 0.5s;
+    transition: width 0.3s, height 0.3s;
     align-items: left;
 }
 
@@ -822,7 +822,7 @@ html {
 
     .nav__item {
         margin: 20px;
-        height: 60px;
+        height: 50px;
     }
 
     #contact-separator {
@@ -830,7 +830,7 @@ html {
     }
 
     .nav__link, #contact-separator{
-        font-size: 30px;
+        font-size: 26px;
     }
 
     .contact-bar {
@@ -844,7 +844,7 @@ html {
 
     .social-sidebar {
         margin-top: auto;
-        padding-bottom: 50px;
+        padding-bottom: 60px;
     }
 
     .social-sidebar ul li i{
