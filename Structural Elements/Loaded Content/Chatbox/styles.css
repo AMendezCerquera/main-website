@@ -31,6 +31,12 @@
     align-items: center;
 }
 
+.lock-toggleClose {
+    position: fixed;
+    right: 54px;
+    top: 32px;
+}
+
 .hidden {
     transform: scaleY(0);
     transform-origin: bottom;
