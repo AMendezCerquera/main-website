@@ -811,7 +811,7 @@ html {
         top: 0;
         right: 0;
         width: 100%;
-        height: 100vh;
+        height: 100dvh;
         z-index: 8;
         padding-top: 70px;
     }
