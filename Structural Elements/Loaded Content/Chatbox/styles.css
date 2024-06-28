@@ -316,13 +316,6 @@
         
     }
 
-    .chat-top {
-        display: flex;
-        height: 150px;
-        width: 100%;
-        vertical-align: bottom;
-    }
-
     .chat-header {
         width: 100%;
         margin-top: auto;

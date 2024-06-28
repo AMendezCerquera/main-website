@@ -370,6 +370,11 @@ function checkMobile(){
     chatBotcontainer.classList.add('mobile');
 }
 
+window.onresize = function() {
+  document.body.height = window.innerHeight;
+}
+window.onresize();
+
 // Call the navigateLoad function on window load
 window.onload = navigateLoad();
 window.onload = checkMobile();
