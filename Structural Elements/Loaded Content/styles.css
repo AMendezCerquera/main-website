@@ -546,12 +546,8 @@ hr.rounded {
 
 .logo {
     position: relative;
-    width: 4vw;
-    font-size: 1rem;
-    max-height: 66px;
-    max-width: 66px;
-    min-width: 50px;
-    min-height: 50px;
+    height: 25px;
+    object-fit: scale-down;
 }
 
 
