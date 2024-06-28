@@ -18,7 +18,7 @@ function navigateLoad() {
 }
 
 function navigateFunctionalities() {
-  const chatbot = document.getElementById("chatbot");
+  chatbot = document.getElementById("chatbot");
   const navMenu = document.getElementById("nav-menu");
   navList = document.getElementById("nav-list");
   navToggle = document.getElementById("nav-toggle");
@@ -62,27 +62,36 @@ function navigateFunctionalities() {
   });
 
   hoverChat();
+
+  function hoverChat() {
+    chatBot = document.querySelector(".chatbot-toggle");
+    const icon1 = document.getElementById("icon1");
+    const icon2 = document.getElementById("icon2");
+
+    chatBot.addEventListener("mouseover", () => {
+      icon1.classList.add("hidden");
+      icon2.classList.remove("hidden");
+    });
+    chatBot.addEventListener("mouseout", () => {
+      icon2.classList.add("hidden");
+      icon1.classList.remove("hidden");
+    });
+  }
 }
 
 function toggleChat() {
   chatInvitation.classList.toggle("hiddens");
   chatInvitation.classList.toggle("show");
   chatbot.classList.toggle("hidden");
-}
-
-function hoverChat() {
-  const chatBot = document.querySelector(".chatbot-toggle");
-  const icon1 = document.getElementById("icon1");
-  const icon2 = document.getElementById("icon2");
-
-  chatBot.addEventListener("mouseover", () => {
-    icon1.classList.add("hidden");
-    icon2.classList.remove("hidden");
-  });
-  chatBot.addEventListener("mouseout", () => {
-    icon2.classList.add("hidden");
-    icon1.classList.remove("hidden");
-  });
+  if (window.innerWidth <= 678) {
+    chatBot.classList.toggle("hidden");
+    chatBotcontainer.classList.toggle("expanded");
+    hideScrollbar();
+    if(chatBotcontainer.classList.contains('expanded'))
+      toggleContainer.classList.add('hide');
+    else
+      toggleContainer.classList.remove('hide');
+  }
 }
 
 var resizeLeft = function resizeLeft() {
@@ -105,19 +114,27 @@ var addEvent = function (elem, type, eventHandle) {
   }
 };
 
+chatBotcontainer = document.querySelector('.chatbot-container');
+toggleContainer = document.querySelector('.toggle-container');
+
 function hideScrollbar() {
-  var root = document.getElementsByTagName( 'html' )[0];
-  if (navList.classList.contains('expanded') && window.innerWidth <= 678) {
-      root.classList.add('hidden-scrollbar');
-      navClose.classList.add('lock-toggleClose');
+  var root = document.getElementsByTagName("html")[0];
+  if ((navList.classList.contains("expanded") || chatBotcontainer.classList.contains('expanded')) && window.innerWidth <= 678) {
+    root.classList.add("hidden-scrollbar");
+    navClose.classList.add("lock-toggleClose");
   } else {
-      root.classList.remove('hidden-scrollbar');
-      navClose.classList.remove('lock-toggleClose');
+    root.classList.remove("hidden-scrollbar");
+    navClose.classList.remove("lock-toggleClose");
+  }
+  if(window.innerWidth <= 678) {
+    chatBotcontainer.classList.add("mobile");
+  }else{
+    chatBotcontainer.classList.remove("mobile");
   }
 }
 
 addEvent(window, "resize", resizeLeft);
-window.addEventListener('resize', hideScrollbar);
+window.addEventListener("resize", hideScrollbar);
 
 //Managing The Prompts for the ChatBox
 const prompts = document.querySelectorAll(".promptButton");
@@ -132,20 +149,25 @@ const initialMessages = [
 const data = {
   1: {
     prompt: ["What are you currently working on?"],
-    messages: ["I'm currently working on a website for an independent consulting company.", "The main focus for the website is to offer healthcare programs to different age groups."],
+    messages: [
+      "I'm currently working on a website for an independent consulting company.",
+      "The main focus for the website is to offer healthcare programs to different age groups.",
+    ],
     subPrompts: [
-      { subPromptId: "data[1].subPrompts[0].subPrompts[0]", 
+      {
+        subPromptId: "data[1].subPrompts[0].subPrompts[0]",
         label: "What stack are you using?",
         subPrompts: [
           {
             messages: [
               "The customer requested for the website to be a simpler design",
               "So I'm planning to use HTML, CSS, and JS.",
-              "I mainly want to use JS for any dinamically loaded content that the user wants to use, as well as for a budget calculator."
-            ], subPrompts: [{ subPromptId: "go-back", label: "Go Back" }]
-          }
-        ]
-       },
+              "I mainly want to use JS for any dinamically loaded content that the user wants to use, as well as for a budget calculator.",
+            ],
+            subPrompts: [{ subPromptId: "go-back", label: "Go Back" }],
+          },
+        ],
+      },
       { subPromptId: "go-back", label: "Go Back" },
     ],
   },
@@ -234,10 +256,10 @@ function displayContent(promptId, message) {
   messages.forEach((message, index) => {
     console.log(message, index);
     setTimeout(function () {
-      if(message !== "email"){
+      if (message !== "email") {
         messageElement = document.createElement("p");
         messageElement.textContent = message;
-      }else {
+      } else {
         console.log("worked!");
         messageElement = document.createElement("button");
         emailContainer = document.createElement("i");
@@ -246,7 +268,7 @@ function displayContent(promptId, message) {
         messageElement.classList.add("email-button");
         emailContainer.addEventListener("click", () => {
           window.location = "mailto:hello@alejandromendez.dev";
-        })
+        });
         messageElement.appendChild(emailContainer);
       }
       messageElement.classList.add("bot-message");
@@ -302,7 +324,7 @@ function scrollToBottom() {
   //console.log(chatMessageWindow.scrollTop);
   const lastMessage = messagesContainer.lastElementChild;
   if (lastMessage) {
-    lastMessage.scrollIntoView({behavior: 'smooth'});
+    lastMessage.scrollIntoView({ behavior: "smooth" });
   }
 }
 
@@ -343,9 +365,15 @@ function disableScroll() {
 }
 */
 
+function checkMobile(){
+  if(window.innerWidth <= 678)
+    chatBotcontainer.classList.add('mobile');
+}
 
 // Call the navigateLoad function on window load
 window.onload = navigateLoad();
+window.onload = checkMobile();
 resizeLeft();
 displayInitialMessages();
 displayMainPrompts();
+
