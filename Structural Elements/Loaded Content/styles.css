@@ -160,6 +160,10 @@ a {
     text-shadow: none;
 }
 
+#mini-logo {
+    object-fit: cover;
+}
+
 .img-home {
     height: 40vw;
     max-height: 400px;
@@ -418,8 +422,10 @@ hr.rounded {
 
 .img-wrap {
     position: relative;
+    display: flex;
     width: 100%;
     height: 280px;
+    background-color: #EFF0F0;
 }
 
 .title-container {
@@ -451,7 +457,17 @@ hr.rounded {
     height: 280px;
     object-fit: cover;
     object-position: top;
-    max-width: 550px;
+    max-width: inherit;
+}
+
+
+#personal-website-img{
+    margin: auto;
+    width: 100%;
+    height: 80px;
+    object-fit: scale-down;
+    object-position: top;
+    max-width: inherit;
 }
 
 
