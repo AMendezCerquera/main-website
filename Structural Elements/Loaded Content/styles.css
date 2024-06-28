@@ -549,6 +549,7 @@ hr.rounded {
     height: 67px;
     width: 77px;
     object-fit: scale-down;
+    z-index: 9;
 }
 
 
@@ -812,7 +813,7 @@ html {
         width: 100%;
         height: 100vh;
         z-index: 8;
-        padding-top: 70px;
+        padding-top: 120px;
     }
 
     .nav__item {
@@ -843,7 +844,7 @@ html {
     }
 
     .social-sidebar ul li i{
-        font-size: 35px;
+        font-size: 30px;
     }
 
     .nav {

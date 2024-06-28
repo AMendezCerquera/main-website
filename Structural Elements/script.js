@@ -116,15 +116,23 @@ var addEvent = function (elem, type, eventHandle) {
 
 chatBotcontainer = document.querySelector('.chatbot-container');
 toggleContainer = document.querySelector('.toggle-container');
+logo = document.getElementById('logo');
 
 function hideScrollbar() {
   var root = document.getElementsByTagName("html")[0];
   if ((navList.classList.contains("expanded") || chatBotcontainer.classList.contains('expanded')) && window.innerWidth <= 678) {
+    setTimeout(() => {
+      logo.src = "/Structural Elements/Logo and Favicon/AlejandroMendez_Icon-2.png";
+    }, 100);
     root.classList.add("hidden-scrollbar");
     navClose.classList.add("lock-toggleClose");
   } else {
+    setTimeout(() => {
+      logo.src = "/Structural Elements/Logo and Favicon/AlejandroMendez_Icon-1.png";
+    }, 100);
     root.classList.remove("hidden-scrollbar");
     navClose.classList.remove("lock-toggleClose");
+
   }
   if(window.innerWidth <= 678) {
     chatBotcontainer.classList.add("mobile");
