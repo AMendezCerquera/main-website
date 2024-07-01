@@ -211,6 +211,7 @@ span {
 .contact-information i{
     transition: color .3s ease;
     font-size: 16px;
+    cursor: pointer;
 }
 
 .contact-information i:hover, .download-section:hover, .text-contact:hover {

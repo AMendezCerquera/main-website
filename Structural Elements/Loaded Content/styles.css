@@ -139,22 +139,6 @@ a {
     text-shadow: 1px 1px 1px black;
 }
 
-/*
-.image-container {
-    display: flex;
-    margin: auto;
-    background-color: #FFFFFF;
-    height: 22vw;
-    justify-content: center;
-    min-height: 190px;
-    max-height: 380px;
-}
-*/
-
-.image-container:hover {
-    transform: scale(1.009);
-}
-
 #name {
     color: #E05215;
     text-shadow: none;
@@ -221,10 +205,6 @@ a {
     width: 50%;
     height: auto;
     margin: 0 0;
-}
-
-.aboutme-country .rightSide p{
-    margin-right: 3rem;
 }
 
 .aboutme-country .leftSide{
@@ -503,7 +483,7 @@ hr.rounded {
 }
 
 .img-wrap:hover .visit-website{
-    visibility: visible;
+    visibility:visible;
     opacity: 1;
 }
 
@@ -623,6 +603,10 @@ hr.rounded {
     width: 330px;
     z-index: 5;
     background-color: #2D3142;
+    box-shadow: 
+        2px 2px 5px -5px rgba(0, 0, 0, 0.91),
+        5px 5px 10px -5px rgba(0, 0, 0, 0.12),
+        7px 8px 14px -5px rgba(0, 0, 0, 0.24);
 }
 
 .contact-bar {
@@ -654,6 +638,7 @@ hr.rounded {
     color: white;
     font-size: 13px;
     transition: color .4s;
+    cursor: pointer;
 }
 
 .nav__item {
@@ -706,6 +691,7 @@ ul, li {
     padding: 5px;
     border-radius: 25%;
     border: none;
+    cursor: pointer;
 }
 
 .social-sidebar ul li i:hover{

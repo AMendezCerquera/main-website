@@ -38,5 +38,9 @@ function accessWebsite() {
     window.open('https://alejandromendez.dev/', '_self');
 }
 
+function accessLinkedin() {
+    window.open('www.linkedin.com/in/alejandro-mendez-dev', '_blank');
+}
+
 
 resizeScreen();

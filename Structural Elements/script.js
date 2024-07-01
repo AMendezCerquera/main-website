@@ -57,29 +57,45 @@ function navigateFunctionalities() {
   });
 
   document.addEventListener("DOMContentLoaded", function () {
-    const chatbot = document.getElementById("chatbot");
     chatbot.classList.add("hidden"); // Ensure chatbot is hidden on page load
   });
 
   hoverChat();
+}
 
-  function hoverChat() {
-    chatBot = document.querySelector(".chatbot-toggle");
-    const icon1 = document.getElementById("icon1");
-    const icon2 = document.getElementById("icon2");
+colorContainer = document.querySelector('.color-container');
+chatBot = document.querySelector(".chatbot-toggle");
 
-    chatBot.addEventListener("mouseover", () => {
-      icon1.classList.add("hidden");
-      icon2.classList.remove("hidden");
-    });
-    chatBot.addEventListener("mouseout", () => {
-      icon2.classList.add("hidden");
-      icon1.classList.remove("hidden");
-    });
+function hoverChat() {
+  const icon1 = document.getElementById("icon1");
+  const icon2 = document.getElementById("icon2");
+
+  colorContainer.addEventListener("mouseover", () => {
+    icon1.classList.add("hidden");
+    icon2.classList.remove("hidden");
+    chatBot.classList.add("floating");
+  });
+  colorContainer.addEventListener("mouseout", () => {
+    icon2.classList.add("hidden");
+    icon1.classList.remove("hidden");
+    chatBot.classList.remove("floating");
+  });
+}
+
+function checkToggleWidth() {
+  if(chatbot.classList.contains('hidden')){
+    chatBotcontainer.style.width = 220 + "px";
+  }else{
+    chatBotcontainer.style.width = 400 + "px";
   }
 }
 
 function toggleChat() {
+  if(!chatbot.classList.contains('hidden')){
+    chatBotcontainer.style.width = 220 + "px";
+  }else{
+    chatBotcontainer.style.width = 400 + "px";
+  }
   chatInvitation.classList.toggle("hiddens");
   chatInvitation.classList.toggle("show");
   chatbot.classList.toggle("hidden");
@@ -387,6 +403,23 @@ window.onresize = function() {
   document.body.height = window.innerHeight;
 }
 
+
+function sendEmail() {
+  window.location = "mailto:hello@alejandromendez.dev"
+}
+
+function accessGithub() {
+  window.open('https://github.com/AMendezCerquera', '_blank');
+}
+
+function accessWebsite() {
+  window.open('https://alejandromendez.dev/', '_self');
+}
+
+function accessLinkedin() {
+  window.open('https://www.linkedin.com/in/alejandro-mendez-dev/', '_blank');
+}
+
 // Call the navigateLoad function on window load
 window.onload = navigateLoad();
 window.onload = checkMobile();
@@ -395,4 +428,4 @@ hideScrollbar();
 displayInitialMessages();
 displayMainPrompts();
 window.onresize();
-
+checkToggleWidth();
