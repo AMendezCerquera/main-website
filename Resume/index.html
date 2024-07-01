@@ -9,35 +9,40 @@
     <!--Title and Favicon -->
     <title>Alejandro Mendez | Software Developer</title>
     <link rel="icon" type="image/x-icon" href="/Structural Elements/Logo and Favicon/alejandro-favicon-color.png">
+    <script defer src="/Resume/script.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <div class="resume-container">
         <div class="main-information">
             <div class="introduction">
-                <h1>Alejandro <br>Mendez</h1>
+                <h1>Alejandro <br id="name">Mendez</h1>
                 <p id="subtitle">Recent Computer Science Graduate</p>
                 <p>Recent graduate looking for work who enjoys learning and improving
                     through hard work and perseverence.
                 </p>
             </div>
             <div class="contact-information">
-                <a href="">alejandromendezcerquera@gmail.com</a>
-                <a href="">(929) 460 - 4296</a>
-                <a href="">github.com/placeholder</a>
-                <a href="">alejandromendez.dev</a>
+                <a class="text-contact" id="email" onclick="sendEmail()">hello@alejandromendez.dev</a><i class="fa-regular fa-envelope icon-contact hide" target="_blank" onclick="sendEmail()"></i>
+                <a class="text-contact" id="github" target="_blank" onclick="accessGithub()">github.com/placeholder</a><i class="fa-brands fa-github icon-contact hide" onclick="accessGithub()"></i>
+                <a class="text-contact" id="home" target="_blank" onclick="accessWebsite()">alejandromendez.dev</a><i class="fa-solid fa-house icon-contact hide" onclick="accessWebsite()"></i>
+                <div class="download-section"><i class="fa-solid fa-file-arrow-down download-icon"></i><p class="download-text" id="download">Download</p></div>
             </div>
         </div>
         <hr class="separator">
         <div class="main-background">
             <div class="experience">
                 <h2>Campus Involvement</h2>
-                <p>During college, I worked on multiple departments and organizations
+                <p id="subtitle-introduction">During college, I worked on multiple departments and organizations
                     that aimed to help students. Here's the departments:
                 </p>
                 <div class="experience-container">
                     <div class="jobtitle-date">
-                        <h3>Covid-19 Liaison Staff, <span>CUNY Queens College</span></h3>
+                        <h3>Covid-19 Liaison Staff, <span>Queens College</span></h3>
                         <p>Oct 2022 - May 2023</p>
                     </div>
                     <div class="experience-explanation">
@@ -93,7 +98,7 @@
                 </div>
                 <div class="experience-container">
                     <div class="jobtitle-date">
-                        <h3>Resident Assistant, <span>COCM The Summit Apartments</span></h3>
+                        <h3>Resident Assistant, <span>COCM at Queens College</span></h3>
                         <p>Aug 2021 - May 2023</p>
                     </div>
                     <div class="experience-explanation">
@@ -137,6 +142,7 @@
                 </div>
             </div>
         </div>
+        <img src="/Structural Elements/Logo and Favicon/AlejandroMendez_Icon-1.png" id="signature">
     </div>
 </body>
 

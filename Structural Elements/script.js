@@ -84,7 +84,6 @@ function toggleChat() {
   chatInvitation.classList.toggle("show");
   chatbot.classList.toggle("hidden");
   if (window.innerWidth <= 678) {
-    chatBot.classList.toggle("hidden");
     chatBotcontainer.classList.toggle("expanded");
     hideScrollbar();
     if(chatBotcontainer.classList.contains('expanded'))
@@ -132,10 +131,16 @@ function hideScrollbar() {
     }, 100);
     root.classList.remove("hidden-scrollbar");
     navClose.classList.remove("lock-toggleClose");
-
   }
   if(window.innerWidth <= 678) {
     chatBotcontainer.classList.add("mobile");
+    if(!chatbot.classList.contains('hidden')){
+      chatBotcontainer.classList.add('expanded');
+      toggleContainer.classList.add('hide');
+    }else{
+      chatBotcontainer.classList.remove('expanded');
+      toggleContainer.classList.remove('hide');
+    }
   }else{
     chatBotcontainer.classList.remove("mobile");
   }
@@ -208,7 +213,7 @@ const data = {
   },
   4: {
     prompt: ["Are you available for hire?"],
-    messages: ["Yes, I am!", "Send me an email below:", "email"],
+    messages: ["Yes, I am!", "Send me an email to:", "hello@alejandromendez.dev", "Or click below: ","email"],
     subPrompts: [{ subPromptId: "go-back", label: "Go Back" }],
   },
 };
@@ -386,6 +391,7 @@ window.onresize = function() {
 window.onload = navigateLoad();
 window.onload = checkMobile();
 resizeLeft();
+hideScrollbar();
 displayInitialMessages();
 displayMainPrompts();
 window.onresize();
