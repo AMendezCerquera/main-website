@@ -86,7 +86,10 @@ function checkToggleWidth() {
   if(chatbot.classList.contains('hidden')){
     chatBotcontainer.style.width = 220 + "px";
   }else{
-    chatBotcontainer.style.width = 400 + "px";
+    if(window.innerWidth > 678)
+      chatBotcontainer.style.width = 400 + 'px';
+    else
+      chatBotcontainer.style.width = 100 + '%';
   }
 }
 
@@ -94,7 +97,10 @@ function toggleChat() {
   if(!chatbot.classList.contains('hidden')){
     chatBotcontainer.style.width = 220 + "px";
   }else{
-    chatBotcontainer.style.width = 400 + "px";
+    if(window.innerWidth > 678)
+      chatBotcontainer.style.width = 400 + 'px';
+    else
+      chatBotcontainer.style.width = 100 + '%';
   }
   chatInvitation.classList.toggle("hiddens");
   chatInvitation.classList.toggle("show");
@@ -401,6 +407,7 @@ function checkMobile(){
 
 window.onresize = function() {
   document.body.height = window.innerHeight;
+  checkToggleWidth();
 }
 
 
